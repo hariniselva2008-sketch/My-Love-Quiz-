@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #001a4d, #000814);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.6;
+  animation: twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    transform: translate(0px, 0px);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate(-50px, -50px);
+    opacity: 0.9;
+  }
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Container */
+.container {
+  width: 95%;
+  max-width: 450px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Card */
+.card {
+  display: none;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.7s ease;
+}
+
+.card.active {
+  display: block;
+}
+
+/* Titles */
+.title {
+  font-size: 32px;
+  color: white;
+  text-shadow: 2px 2px 12px black;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Question */
+.question {
+  font-size: 22px;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  margin-bottom: 25px;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionBtn {
+  padding: 12px;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  cursor: pointer;
+  background: white;
+  color: #001a4d;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.optionBtn:hover {
+  background: #001a4d;
+  color: white;
+}
+
+/* Button */
+.btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: white;
+  color: #001a4d;
+  font-weight: bold;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #001a4d;
+  color: white;
+}
+
+/* Progress */
+.progress {
+  margin-top: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Score */
+.score {
+  margin-top: 15px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+.finalMsg {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  text-shadow: 2px 2px 10px black;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
