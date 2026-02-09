@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love Quiz 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Stars Background -->
+  <div class="stars"></div>
+  <div class="moon"></div>
+
+  <div class="container">
+
+    <!-- Start Page -->
+    <div id="startPage" class="card active">
+      <h1 class="title">💖 My Love Quiz 💖</h1>
+      <p class="subtitle">Just for you da 😘🫂</p>
+
+      <button class="btn" onclick="startQuiz()">Start Quiz 💌</button>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quizPage" class="card">
+      <h2 id="question" class="question"></h2>
+
+      <div class="options">
+        <button class="optionBtn" onclick="checkAnswer('A')" id="btnA"></button>
+        <button class="optionBtn" onclick="checkAnswer('B')" id="btnB"></button>
+        <button class="optionBtn" onclick="checkAnswer('C')" id="btnC"></button>
+        <button class="optionBtn" onclick="checkAnswer('D')" id="btnD"></button>
+      </div>
+
+      <p class="progress" id="progressText"></p>
+    </div>
+
+    <!-- Result Page -->
+    <div id="resultPage" class="card">
+      <h1 class="title">🎉 Quiz Finished 🎉</h1>
+      <h2 id="scoreText" class="score"></h2>
+
+      <p class="finalMsg" id="finalMsg"></p>
+
+      <button class="btn" onclick="restartQuiz()">Play Again 😘</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
